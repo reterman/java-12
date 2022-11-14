@@ -6,11 +6,14 @@ public class lab12 {
 
 	public static void main(String[] args)
 	{
+		FileReader fr = null;
+		FileWriter fw = null;
 
-		try {
-
-			FileReader fr = new FileReader("Input.txt");
-			FileWriter fw = new FileWriter("Output.txt");
+		try
+		
+			{
+			fr = new FileReader("Input.txt");
+			fw = new FileWriter("Output.txt");
 			String str = "";
 			int i;
 
@@ -26,9 +29,9 @@ public class lab12 {
 			System.out.println(a);
 
 			fw.write(Integer.toString(a));
-
 			fr.close();
-			fw.close();
+			
+
 
 			System.out.println("File reading and writing both done");
         }
@@ -38,5 +41,20 @@ public class lab12 {
 
 			System.out.println("There are some IOException");
 		}
+		finally {
+      	try {
+			fr.close();
+			fw.close();
+
+      	}
+      	catch(Exception e)
+      	{
+      	  if(fw != null)
+      	  {
+			//e.addSuppressed(fw); //Add to primary exception
+      	    //throw e;
+      	  }
+      	}
+    }
 	}
 }
