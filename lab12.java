@@ -19,9 +19,13 @@ public class lab12 {
 				str += (char)i;
 			}
 
-			System.out.println(str);
+			String[] numbers = str.split(" ");
+			int[] ints = new int[numbers.length];
+			for(int c = 0; c < numbers.length; c++) ints[c] = Integer.parseInt(numbers[c]);
+			int a = ints[0]/ints[1];
+			System.out.println(a);
 
-			fw.write(str);
+			fw.write(Integer.toString(a));
 
 			fr.close();
 			fw.close();
