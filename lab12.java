@@ -10,12 +10,8 @@ public class lab12 {
 		try {
 
 			FileReader fr = new FileReader("Input.txt");
-
-
 			FileWriter fw = new FileWriter("Output.txt");
-
 			String str = "";
-
 			int i;
 
 			while ((i = fr.read()) != -1) {
